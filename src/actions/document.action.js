@@ -1,12 +1,22 @@
 import { DOCUMENT } from '../constants';
 
 export const documentActions = {
-    get
+    get,
+    download
 }
 
-function get(user, password) {
+function get(data) {
+    console.log('*** llega al action ', data)
     return { 
         type: DOCUMENT.GET, 
-        data: { user: user, password: password }
+        data
+    }
+}
+
+
+function download(user, password, document) {
+    return { 
+        type: DOCUMENT.DOWNLOAD, 
+        data: { user: user, password: password, document: document }
     }
 }

@@ -1,20 +1,20 @@
 const stepsData = {
-    currentStep: 2,
+    currentStep: 0,
     steps: [
       {
-        title: 'Step 1',
+        title: 'Paso 1',
         description:
-          'This is step 1',
+          'Cedula',
       },
       {
-        title: 'Step 2',
+        title: 'Paso 2',
         description:
-          'This is step 2',
+          'Contraseña',
       },
       {
-        title: 'Step 3',
+        title: 'Paso 3',
         description:
-          'This is step 3',
+          'Tipo de documento',
       },
     ],
     formData: [

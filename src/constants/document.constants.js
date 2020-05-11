@@ -1,3 +1,4 @@
 export const DOCUMENT = {
-    GET: 'GET_DOCUMENT'
+    GET: 'DOCUMENT_GET',
+    DOWNLOAD: 'DOCUMENT_DOWNLOAD'
 };

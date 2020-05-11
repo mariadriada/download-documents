@@ -1,0 +1,17 @@
+.form-container {
+    max-width: 50%;
+    margin: 0 auto;
+}
+
+form {
+    padding-top: 3rem;
+    .buttons-container{
+        background-color: white;
+        display: flex;
+        justify-content: center;
+
+        button {
+            margin: .9rem;
+        }
+    }
+}
