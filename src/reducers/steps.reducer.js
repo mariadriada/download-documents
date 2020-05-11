@@ -1,11 +1,11 @@
-import { DOCUMENT } from '../constants'
+import { STEPS } from '../constants'
 
 export default function documentReducer(state = {}, action) {
     
     switch(action.type ){
-        case DOCUMENT.GET:
-            //console.log('reducer ', action)
-            return true
+        case STEPS.SET:
+            console.log('reducer STEPS ', action)
+            return action.data
        
         default:
             return state
