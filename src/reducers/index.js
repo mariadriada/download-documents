@@ -8,7 +8,7 @@ import submitDataReducer from './submitData.reducer'
 
 const rootReducer = combineReducers({
     //isLoading: loadingReducer,
-    documents: documentsReducer,
+    document: documentsReducer,
     steps: stepsReducer,
     currentStep: currentStepReducer,
     formData: formDataReducer,

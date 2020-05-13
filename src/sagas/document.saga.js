@@ -1,26 +1,19 @@
 import { DOCUMENT } from '../constants'
+import { takeEvery, put, call } from 'redux-saga/effects'
 import { 
     documentActions
 } from '../actions'
 import { fetchDocument } from '../api'
 
-import { takeEvery, put, call } from 'redux-saga/effects'
-
-
 export function* handleGetDocument(action){ 
-   yield console.log('handleGetDocument()', action)
-
    try {       
+        yield put(documentActions.loading())
         const document = yield call(fetchDocument, action.data)  
-        console.log('document', document)
-        
+        yield put(documentActions.download(document))
     }
     catch(error){
-        console.log('Error api ', error)
-       
+        yield put(documentActions.error(document))
     } 
-    
-
 }
 
 export default function* watchDocument(){

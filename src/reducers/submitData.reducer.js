@@ -4,12 +4,11 @@ export default function documentReducer(state = {}, action) {
     
     switch(action.type ){
         case SUBMIT_DATA.SET:
-            console.log('SUBMIT_DATA REDUCER ', action)
             return {
                 ...state,
                 [action.name]: action.value
             }
-       
+        break
         default:
             return state
     }   

@@ -16,29 +16,38 @@ const getURL = (type) => {
 /**
  * fetchDocument
  * [data]: Object
+ * Download document and return blob
  */
 export const fetchDocument = async (data) => {   
     
     const URL = getURL(data.document)
-    console.log('fetchDocument', data, URL)
 
     if(URL !== false) {
-        const response = fetch(URL, {
+        const response = await fetch('https://crawler-dot-tributi-v2.wl.r.appspot.com/user_get_rut', {
             method: 'POST',
             headers:{
                 'Content-Type': 'application/json'
             },
-            params: JSON.stringify({
-                national_id: data.cedula, 
-                password: data.password
+            body: JSON.stringify({
+                "national_id": data.cedula, 
+                "password": data.password
             })
         })
-        console.log('response')
-        // const data = await response.json()     
-        // if(response.status >= 400){
-        //     throw new Error(data.error)
-        // }    
-        // return data
+
+        if(response.status >= 400){
+            throw new Error('Error searching document')
+        }  
+
+        const blob = await response.blob()
+        const url = await window.URL.createObjectURL(blob);
+        var a = document.createElement('a');
+        a.href = url;
+        a.download = `${data.cedula}_${data.document}`;
+        document.body.appendChild(a); 
+        a.click();    
+        a.remove(); 
+
+        return url
     }
     
 }

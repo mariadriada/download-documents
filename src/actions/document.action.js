@@ -2,21 +2,44 @@ import { DOCUMENT } from '../constants';
 
 export const documentActions = {
     get,
-    download
+    download,
+    loading,
+    loaded,
+    error,
+    showModal,
+    hideModal
 }
 
 function get(data) {
-    console.log('*** llega al action ', data)
     return { 
         type: DOCUMENT.GET, 
         data
     }
 }
 
-
-function download(user, password, document) {
+function download(data) {
     return { 
         type: DOCUMENT.DOWNLOAD, 
-        data: { user: user, password: password, document: document }
+        data
     }
+}
+
+function loading() {
+    return { type: DOCUMENT.LOADING } 
+}
+
+function loaded() {
+    return { type: DOCUMENT.LOADED } 
+}
+
+function error() {
+    return { type: DOCUMENT.ERROR } 
+}
+
+function showModal() {
+    return { type: DOCUMENT.SHOW_MODAL } 
+}
+
+function hideModal() {
+    return { type: DOCUMENT.HIDE_MODAL } 
 }

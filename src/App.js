@@ -10,15 +10,12 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 function App(props) {
 
   useEffect(()=>{
-    //console.log('useeffect root ')
-
     function setInitialData(){
       props.setSteps(stepsData.steps)
       props.setCurrentStep(stepsData.currentStep)
       props.setFormData(stepsData.formData)
     }
     setInitialData()
-
   }, [])
 
 

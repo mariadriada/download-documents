@@ -5,6 +5,7 @@ import 'rc-steps/assets/index.css';
 import 'rc-steps/assets/iconfont.css';
 import Steps, { Step } from 'rc-steps';
 import { DinamicForm } from '../DinamicForm'
+import { Document } from '../Document'
 import './controls.style.scss'
 
 function controlsComponent(props) {
@@ -13,6 +14,8 @@ function controlsComponent(props) {
     const { steps, currentStep} = props
 
     return (
+        <>
+        <Document />
         <div className="controls-container">
             <h1 align="center">Formulario para descargar documentos</h1>
 
@@ -27,6 +30,7 @@ function controlsComponent(props) {
             </Steps>
             
         </div>
+        </>
     )
 }
 

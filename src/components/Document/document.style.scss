@@ -1,0 +1,48 @@
+$secondary-color: #4868E8;
+$bg-color: #A75BFF;
+$text-color: white;
+
+.document-container {
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $bg-color;
+    flex-direction: column;
+    color: $text-color;
+
+    svg.icon-close {
+        fill: $text-color;
+        width: 40px;
+        height: 40px;
+        position: fixed;
+        top: 5%;
+        right: 5%;
+    }
+
+    // span {
+    //     color: $text-color;
+    // }
+
+    a {
+        //background-color: $secondary-color;
+        padding: 1rem;
+        border-radius: 10px;
+        color: $text-color;
+
+        &:hover {
+            color: $text-color;
+            text-decoration: none;
+        }
+       
+        // &:not([href]) {
+        //     color: $text-color;
+        // }
+
+        // &:not([href]):hover {
+        //     color: $text-color;
+        // }
+    }
+}
