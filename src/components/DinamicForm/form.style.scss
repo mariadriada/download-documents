@@ -1,17 +1,42 @@
 .form-container {
-    max-width: 50%;
-    margin: 0 auto;
+    width: 80%;
+    position: relative;
 }
 
 form {
-    padding-top: 3rem;
+
+    .form-group {
+        width: 50%;
+        margin: 0 auto;
+    }
+
     .buttons-container{
-        background-color: white;
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
+        width: 100%;
+        padding-top: 10%;
+
+        .btn1 {
+            position: absolute;
+            top: 50%;
+            left: 0%;
+        }
+
+        .btn2 {
+            position: absolute;
+            top: 50%;
+            right: 0%;
+        }
+
+        svg {
+            fill: #007bff;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+        }
 
         button {
-            margin: .9rem;
+            display: none;
         }
     }
 }

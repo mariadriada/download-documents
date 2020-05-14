@@ -28,7 +28,6 @@ function App(props) {
   );
 }
 
-
 const mapDispatchToProps = dispatch => ({
   setSteps: data => dispatch(stepActions.set(data)),
   setCurrentStep: data => dispatch(currentStepActions.set(data)),
